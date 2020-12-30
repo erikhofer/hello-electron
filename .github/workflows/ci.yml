@@ -7,14 +7,18 @@ on:
       - master
 jobs:
   build_on_mac:
-    runs-on: macOS-latest
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@master
       with:
         node-version: 12
+    - name: installes dependencies
+      run: npm install
+    - name: build
+      run: npm run make
     - name: see directory
-      run: ls
+      run: tree out
       
   build_on_win:
     runs-on: windows-2016
@@ -23,5 +27,9 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: 12
+    - name: installes dependencies
+      run: npm install
+    - name: build
+      run: npm run make
     - name: see directory
-      run: ls
+      run: tree out
