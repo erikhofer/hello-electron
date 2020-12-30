@@ -5,6 +5,8 @@ on:
     branches:
     # this will run on the electron branch
       - master
+    tags:
+      - 'v*'
 jobs:
   build_on_mac:
     runs-on: macos-latest
