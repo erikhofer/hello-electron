@@ -1,10 +1,9 @@
 # name of your github action
-name: CI# this will help you specify where to run 
+name: Release
 on:
-  push:
-    branches:
-    # this will run on the electron branch
-      - master
+  release:
+    types:
+      - created
 jobs:
   build_on_mac:
     runs-on: macos-latest
@@ -15,10 +14,7 @@ jobs:
         node-version: 12
     - name: installes dependencies
       run: npm install
-    - name: build
-      run: npm run make
     - name: publish
-      if: startsWith(github.ref, 'refs/tags/v')
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: npm run publish
@@ -32,10 +28,7 @@ jobs:
         node-version: 12
     - name: installes dependencies
       run: npm install
-    - name: build
-      run: npm run make
     - name: publish
-      if: startsWith(github.ref, 'refs/tags/v')
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: npm run publish
