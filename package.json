@@ -1,7 +1,7 @@
 {
   "name": "hello-electron",
   "productName": "hello-electron",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
@@ -35,7 +35,9 @@
         },
         {
           "name": "@electron-forge/maker-deb",
-          "platforms": ["linux"],
+          "platforms": [
+            "linux"
+          ],
           "config": {
             "maintainer": "Joe Bloggs",
             "homepage": "https://example.com"
@@ -47,7 +49,9 @@
         },
         {
           "name": "@electron-forge/maker-rpm",
-          "platforms": ["linux"],
+          "platforms": [
+            "linux"
+          ],
           "config": {}
         }
       ],
