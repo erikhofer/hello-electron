@@ -1,7 +1,7 @@
 {
   "name": "hello-electron",
   "productName": "hello-electron",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
@@ -28,10 +28,7 @@
           }
         },
         {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
+          "name": "@electron-forge/maker-zip"
         },
         {
           "name": "@electron-forge/maker-deb",
