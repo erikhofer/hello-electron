@@ -1,36 +1,9 @@
 # name of your github action
 name: CI
-on:
-  push:
-    branches:
-    # this will run on the electron branch
-      - master
-jobs:
-  build_on_mac:
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@master
-      with:
-        node-version: 14
-    - name: install dependencies
-      run: npm install
-    - name: build
-      run: npm run make
-      
-  build_on_win:
-    runs-on: windows-latest
-    steps:
-    - uses: actions/checkout@v2       
-    - uses: actions/setup-node@master
-      with:
-        node-version: 14
-    - name: install dependencies
-      run: npm install
-    - name: build
-      run: npm run make
+on: [push, pull_request]
 
-  build_on_linux:
+jobs:
+  build_on_linux: &build_template
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2       
@@ -41,3 +14,11 @@ jobs:
       run: npm install
     - name: build
       run: npm run make
+
+  build_on_mac:
+    <<: *build_template
+    runs-on: macos-latest
+      
+  build_on_win:
+    <<: *build_template
+    runs-on: windows-latest
