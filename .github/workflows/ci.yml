@@ -2,7 +2,7 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  build_on_linux: &build_template
+  build_on_linux:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
