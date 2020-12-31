@@ -54,7 +54,8 @@
           "config": {
             "repository": {
               "owner": "erikhofer",
-              "name": "hello-electron"
+              "name": "hello-electron",
+              "draft": true
             }
           }
         }
