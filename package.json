@@ -1,7 +1,7 @@
 {
   "name": "hello-electron",
   "productName": "hello-electron",
-  "version": "1.7.3",
+  "version": "1.7.4",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
